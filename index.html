@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super pipe - Flying Hero</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="gameContainer">
+        <div class="cloud cloud1"></div>
+        <div class="cloud cloud2"></div>
+        
+        <canvas id="gameCanvas" width="400" height="600"></canvas>
+        
+        <div id="score">0</div>
+        
+        <button class="sound-toggle" onclick="toggleSound()">🔊</button>
+        
+        <div id="startScreen">
+            <h1>🐸 SUPER PIPE 🦸‍♂️</h1>
+            <div id="instructions">
+                <p>🎯 Flying Superhero Pipe Adventure!</p>
+                <p>• Tap to make fipe fly</p>
+                <p>• Avoid the pipes</p>
+                <p>• Collect points</p>
+                <p>• Become the ultimate hero!</p>
+            </div>
+            <div class="theme-buttons">
+                <button class="theme-btn" onclick="setTheme('forest')">🌲 Forest</button>
+                <button class="theme-btn" onclick="setTheme('city')">🏙️ City</button>
+                <button class="theme-btn" onclick="setTheme('space')">🚀 Space</button>
+            </div>
+            <button onclick="startGame()">START ADVENTURE</button>
+        </div>
+        
+        <div id="gameOverScreen">
+            <h1>🎮 GAME OVER</h1>
+            <p id="finalScore">Score: 0</p>
+            <p id="highScore">Best: 0</p>
+            <button onclick="restartGame()">TRY AGAIN</button>
+            <button onclick="showStartScreen()">MAIN MENU</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

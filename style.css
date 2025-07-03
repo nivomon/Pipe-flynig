@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #87CEEB 0%, #98FB98 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+#gameContainer {
+    position: relative;
+    width: 400px;
+    height: 600px;
+    background: linear-gradient(180deg, #87CEEB 0%, #90EE90 50%, #228B22 100%);
+    border: 3px solid #333;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+#gameCanvas {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+.cloud {
+    position: absolute;
+    background: white;
+    border-radius: 50px;
+    opacity: 0.8;
+    animation: float 20s infinite linear;
+}
+.cloud1 {
+    width: 60px;
+    height: 20px;
+    top: 10%;
+    left: -60px;
+}
+.cloud2 {
+    width: 80px;
+    height: 25px;
+    top: 20%;
+    left: -80px;
+    animation-delay: -10s;
+}
+@keyframes float {
+    from { transform: translateX(0); }
+    to { transform: translateX(460px); }
+}
+#startScreen, #gameOverScreen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    z-index: 10;
+}
+#gameOverScreen {
+    display: none;
+}
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    background: linear-gradient(45deg, #FFD700, #FF6347);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+button {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    background: linear-gradient(45deg, #FF6347, #FFD700);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    margin: 10px;
+    transition: transform 0.2s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+button:hover {
+    transform: scale(1.1);
+}
+#score {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2em;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    z-index: 5;
+}
+#instructions {
+    margin: 20px;
+    font-size: 1.1em;
+    line-height: 1.5;
+}
+.theme-buttons {
+    margin: 20px 0;
+}
+.theme-btn {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 1em;
+    border-radius: 20px;
+}
+.sound-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255,255,255,0.2);
+    border: 2px solid white;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 5;
+}
